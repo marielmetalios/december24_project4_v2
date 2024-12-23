@@ -110,7 +110,7 @@
   footer {
     position: fixed;
     inset: 0;
-    top: calc(100% - 12rem);
+    top: calc(100% - 5rem);
   }
   
   li {

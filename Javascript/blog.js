@@ -11,17 +11,17 @@ function buildingElement() {
     const newArticle = document.createElement('article');
         newArticle.innerHTML = `
         <h2>${entry.title}</h2>
-        <blockquote>${entry.userName}</blockquote>
-        <p>${entry.content}</p> `;
+        <blockquote>${entry.content}</blockquote>
+        <p>${entry.userName}</p> `;
     mainElement.appendChild(newArticle);
     console.log("New article appended to DOM");
 })};
 
 // TODO: Create a function that handles the case where there are no blog posts to display
 function noBlogsToDisplay() {
-    if (newBlogPost == ""){
+    if (blogPosts == ""){
     const noPosts = document.createElement("p");
-    noPosts.textContent = "No blogs to display, go back and add one!";
+    noPosts.textContent = "No Blog posts yet...";
     mainElement.appendChild(noPosts);
     console.log("No blog posts to add")
 }};

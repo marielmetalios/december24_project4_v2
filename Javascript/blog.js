@@ -2,7 +2,7 @@
 const mainElement = document.getElementById('main');
 const backButton =  document.querySelector('.back');
 const blogPosts = readLocalStorage();
-const mainArticle = document.getElementById('article');
+// const mainArticle = document.getElementById('article');
 
 // TODO: Create a function that builds an element and appends it to the DOM
 // pulls in object from form.js page and creates articles

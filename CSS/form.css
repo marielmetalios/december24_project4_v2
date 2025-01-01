@@ -87,7 +87,7 @@
   
   .page {
   display: flex;
-  gap: 2rem;
+  /* gap: 2rem; */
   /* align-items: center */
   }
   
@@ -106,7 +106,7 @@
   
 
   #formHeader {
-  margin-top: 15%;
+  margin-top: 10%;
   }
   
   

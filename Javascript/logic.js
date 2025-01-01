@@ -9,29 +9,59 @@ const mode = 'mode';
 // The --circle-color attribute changes to match the mode. (10 pts)
 // classes in CSS and light and dark
 
-if (localStorage.getItem(mode) === 'light'){
-  document.body.classList.add('light');
-  document.body.classList.remove('dark');
-  toggle.checked = true;
-} else {
-  document.body.classList.add('dark');
-  document.body.classList.remove('light');
-  toggle.checked = false;
-}
+function checkCurrentMode() {
+  const currentMode = localStorage.getItem('mode');
+  if (currentMode === 'light') {
+    document.body.classList.add('light');
+    document.body.classList.remove('dark');
+  } else {
+    document.body.classList.add('dark');
+    document.body.classList.remove('light');
+  }
+  };
+checkCurrentMode();
 
 toggle.addEventListener('change', function(event) {
   // event.preventDefault();
-  if (toggle.checked) {
+  if (document.body.classList.contains('dark')) {
+    localStorage.setItem('mode', 'light');
+    document.body.classList.remove('dark');
+    document.body.classList.add('light');
+    console.log ('change to light mode')
+  } else {
+    localStorage.setItem('mode', 'dark');
     document.body.classList.add('dark');
     document.body.classList.remove('light');
-    localStorage.setItem(mode, 'dark');
-    console.log ('toggle checked')
-  } else {
-    document.body.classList.add('light');
-    document.body.classList.remove('dark');
-    localStorage.setItem(mode, 'light');
+    console.log('change to dark mode')
+  }
+});
 
-}});
+
+
+// if (localStorage.getItem(mode) === 'light'){
+//   toggle.checked = true;
+//   document.body.classList.add('light');
+//   document.body.classList.remove('dark');
+// } else {
+//   toggle.checked = false;
+//   document.body.classList.add('dark');
+//   document.body.classList.remove('light');
+// }
+
+// toggle.addEventListener('change', function(event) {
+//   // event.preventDefault();
+//   if (toggle.checked) {
+//     document.body.classList.add('light');
+//     document.body.classList.remove('dark');
+//     localStorage.setItem(mode, 'light');
+//     console.log ('toggle checked - light mode')
+//   } else {
+//     document.body.classList.add('dark');
+//     document.body.classList.remove('light');
+//     localStorage.setItem(mode, 'dark');
+//     console.log('toggle unchecked - dark mode')
+
+// }});
 
 
 
